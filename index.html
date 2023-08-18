@@ -20,13 +20,13 @@
       >
         <p class="md:w-full w-[90%] text-center my-2">Free shipping $100+, 60-day trial, free returns</p>
       </div>
-      <nav class="fixed z-10 bg-white w-full md:h-[12vh] h-[15vh] flex justify-center items-center text-black">
+      <nav class="fixed z-10 bg-white w-full md:h-[12vh] h-[14vh] flex justify-center items-center text-black">
         <div class="nav-content w-[98%] md:w-[95%] h-fit flex justify-between">
           <div class="menu hidden w-full max-[1050px]:flex justify-center">
                 <ul class="flex justify-between items-center w-[90%]">
                     <li><a href="#"><i class="bi bi-list text-[30px]" onclick="showDropdown()"></i></a></li>
                     <li><a href="#"><i class="bi bi-search text-[22px]" onclick="showSearchModal()"></i></a></li>
-                    <li><a href="#" class="logo"><h1 class="text-[22px] font-light tracking-[2px] border border-black text-black px-2">GREATJONES</h1></a></li>
+                    <li><a href="#" class="logo"><h1 class="text-[22px] font-light tracking-[2px] border-2 border-black text-black px-2">GREATJONES</h1></a></li>
                     <li><a href="#"><i class="bi bi-basket3 text-[22px]"></i></a></li>
                 </ul>
           </div>
@@ -105,8 +105,8 @@
 
         </div>
     </main>
-    <div id="searchModal" class="absolute hidden md:top-28 top-32 w-full md:h-[60vh] justify-center">
-      <div class="w-[95%] h-full my-8 bg-gray-800 rounded-lg border border-white text-white flex justify-center items-center">
+    <div id="searchModal" class="absolute hidden md:top-28 top-32 w-full h-[60vh] justify-center">
+      <div class="searchModal w-[95%] h-full my-8 bg-gray-800 rounded-lg border border-white text-white flex justify-center items-center">
         <div id="searchMain" class="w-[90%]">
           <div class="w-full h-fit flex items-center justify-end mt-2"><a href="" class="hover:text-white"><i class="bi bi-x-square text-[45px]" onclick="cancelSearchModal()"></i></a></div>
           <div class="mb-4">
@@ -453,6 +453,7 @@
       
       function showDropdown(){
         menuDropdown.style.display = "flex";
+        document.querySelector(".searchModal").style.display = "none";
       }
       function cancelDropdown(){
         menuDropdown.style.display = "hidden";
@@ -508,6 +509,8 @@
       
       function showSearchModal(){
         searchModal.style.display = "flex"
+        document.querySelector(".dropDown").style.display = "none";
+        
       }
       function cancelSearchModal(){
         searchModal.style.display = "none";
@@ -517,6 +520,7 @@
           alert("Empty request! Enter a valid request.")
         }else{
           searchMain.style.display = "none";
+          menu.style.display = "none";
           searching.style.display = "flex";
         }
       }
